@@ -197,6 +197,8 @@ public sealed unsafe class ZoneSession : IDisposable
                 // The Player could do something like jump, so to be extremely sure we are where we are supposed to, we set the Position and Rotation again.
                 SetLocalPlayerPosition(sessionSave.Position, sessionSave.Rotation);
                 condition->Occupied = false;
+                condition->SufferingStatusAffliction = false;
+                condition->SufferingStatusAffliction2 = false;
 
                 DisableFirewall();
             });
