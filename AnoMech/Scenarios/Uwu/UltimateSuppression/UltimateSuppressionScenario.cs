@@ -491,6 +491,7 @@ public unsafe class UltimateSuppressionScenario : IScenario
             }
         });
 
+        List<IReadOnlyList<SimCharacter>> featherLanceSnapshot = new();
         world.Events.Add(41.20f, () =>
         {
             garuda?.PlayActionTimeline(ActionTimelineId.WarpStart2);
@@ -506,10 +507,17 @@ public unsafe class UltimateSuppressionScenario : IScenario
                     0,
                     animationTargetId: razorPlume.GameObjectId
                     );
+
+                featherLanceSnapshot.Add(party.Find.InsideActionAoe(ActionId.Featherlance, razorPlume!.Placement()));
             }
         });
 
         utils.FeatherRain([() => dummies[8], () => dummies[9], () => dummies[10], () => dummies[11], () => dummies[12]], 41.20f, 42.47f, 43.43f);
+
+        world.Events.Add(41.70f, () =>
+        {
+            utils.ResolveSnapshot(featherLanceSnapshot.SelectMany(x => x).ToList(), "Featherlance");
+        });
 
         world.Events.Add(42.97f, () =>
         {
