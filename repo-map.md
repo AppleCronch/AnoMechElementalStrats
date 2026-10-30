@@ -41,7 +41,7 @@ One line per tracked source file (binary assets and lockfiles omitted). Folder g
 ## AnoMech/ (plugin root)
 
 - `AnoMech.csproj` — Plugin project file
-- `AnoMech.json` — Dalamud plugin manifest
+- `AnoMechElementalStrats.json` — Dalamud plugin manifest
 - `BannedSymbols.txt` — Banned API symbols list for analyzers
 - `Configuration.cs` — Persisted plugin configuration
 - `Plugin.cs` — Dalamud plugin entry point; installs Natives and the frame hook

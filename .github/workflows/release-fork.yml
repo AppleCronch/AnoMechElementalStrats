@@ -36,5 +36,5 @@ jobs:
         with:
           name: ${{ github.ref_name }}
           body: P5 delta and sigma strats for tuufless (Elemental)
-          files: AnoMech/bin/Release/AnoMech/latest.zip
+          files: AnoMech/bin/Release/AnoMechElementalStrats/latest.zip
           fail_on_unmatched_files: true
